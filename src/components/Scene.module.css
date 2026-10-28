@@ -1,0 +1,86 @@
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(201, 178, 90, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 178, 90, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  animation: drift 48s linear infinite;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(201, 178, 90, 0.07), transparent 36%),
+    radial-gradient(ellipse at 20% 80%, rgba(80, 80, 80, 0.18), transparent 40%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55));
+}
+
+.orb {
+  position: absolute;
+  width: 42vw;
+  height: 42vw;
+  right: -8vw;
+  top: 8vh;
+  border: 1px solid rgba(201, 178, 90, 0.08);
+  border-radius: 50%;
+  animation: pulse 12s ease-in-out infinite;
+}
+
+.geometry {
+  position: absolute;
+  width: min(70vw, 720px);
+  right: -4%;
+  top: 8%;
+  opacity: 0.9;
+  animation: float 22s ease-in-out infinite;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-72px, -72px, 0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid,
+  .orb,
+  .geometry {
+    animation: none;
+  }
+}
