@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { skillCategories } from '../data/site'
 import { HudCorners } from './HudCorners'
 import styles from './Skills.module.css'
@@ -6,13 +7,35 @@ export function Skills() {
   return (
     <section id="skills" className="section">
       <div className="section-inner">
-        <p className="section-kicker">02 // Capabilities</p>
-        <h2 className="section-title">
+        <motion.p
+          className="section-kicker"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          02 // Capabilities
+        </motion.p>
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           Tech stack <span>// Specialization</span>
-        </h2>
+        </motion.h2>
         <div className={styles.categoryGrid}>
-          {skillCategories.map((cat) => (
-            <article key={cat.category} className={`panel ${styles.categoryPanel}`}>
+          {skillCategories.map((cat, idx) => (
+            <motion.article
+              key={cat.category}
+              className={`panel ${styles.categoryPanel}`}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              whileHover={{ y: -6 }}
+            >
               <HudCorners />
               <div className={styles.accent} />
               <header className={styles.categoryHeader}>
@@ -21,16 +44,21 @@ export function Skills() {
               </header>
               <div className={styles.itemList}>
                 {cat.items.map((item) => (
-                  <div key={item.name} className={styles.itemCard}>
+                  <motion.div
+                    key={item.name}
+                    className={styles.itemCard}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <div className={styles.itemTop}>
                       <span className={styles.itemName}>{item.name}</span>
                       <span className={styles.itemFocus}>{item.focus}</span>
                     </div>
                     <p className={styles.itemDetails}>{item.details}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

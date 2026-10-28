@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { About } from './components/About'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -24,14 +25,16 @@ export default function App() {
       <a className="skip-link" href="#home">
         Skip to content
       </a>
-      {booting ? (
-        <Loader
-          onComplete={() => {
-            sessionStorage.setItem('ak-interface-ready', '1')
-            setBooting(false)
-          }}
-        />
-      ) : null}
+      <AnimatePresence>
+        {booting && (
+          <Loader
+            onComplete={() => {
+              sessionStorage.setItem('ak-interface-ready', '1')
+              setBooting(false)
+            }}
+          />
+        )}
+      </AnimatePresence>
       <div className="grain" aria-hidden="true" />
       <div className="scanlines" aria-hidden="true" />
       <Scene />

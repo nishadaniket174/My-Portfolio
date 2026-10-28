@@ -35,7 +35,8 @@
   position: relative;
   padding: 36px 28px 40px;
   max-width: 920px;
-  background: linear-gradient(90deg, rgba(12, 12, 12, 0.72), rgba(12, 12, 12, 0.28) 70%, transparent);
+  background: linear-gradient(90deg, rgba(12, 12, 12, 0.85), rgba(12, 12, 12, 0.45) 70%, transparent);
+  border: 1px solid var(--line);
 }
 
 .role {
@@ -54,29 +55,126 @@
   font-weight: 800;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  position: relative;
 }
 
 .name span {
   display: block;
 }
 
+/* Tactical glitch effect on primary moniker */
+.glitchText {
+  position: relative;
+  display: inline-block;
+}
+
+.glitchText::before,
+.glitchText::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitchText:hover::before {
+  left: -2px;
+  text-shadow: 2px 0 #c9b25a;
+  animation: glitch-anim-1 1.2s infinite linear alternate-reverse;
+}
+
+.glitchText:hover::after {
+  left: 2px;
+  text-shadow: -2px 0 #ffffff;
+  animation: glitch-anim-2 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip: rect(10px, 9999px, 30px, 0); }
+  20% { clip: rect(60px, 9999px, 80px, 0); }
+  40% { clip: rect(20px, 9999px, 50px, 0); }
+  60% { clip: rect(80px, 9999px, 100px, 0); }
+  80% { clip: rect(10px, 9999px, 40px, 0); }
+  100% { clip: rect(50px, 9999px, 90px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(50px, 9999px, 70px, 0); }
+  20% { clip: rect(20px, 9999px, 40px, 0); }
+  40% { clip: rect(70px, 9999px, 90px, 0); }
+  60% { clip: rect(30px, 9999px, 60px, 0); }
+  80% { clip: rect(90px, 9999px, 110px, 0); }
+  100% { clip: rect(15px, 9999px, 45px, 0); }
+}
+
 .intro {
-  max-width: 520px;
+  max-width: 540px;
+  min-height: 58px;
   margin: 28px 0 32px;
   color: var(--text-muted);
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   font-weight: 400;
   letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+}
+
+/* Tactical button scanning hover effect */
+.tacticalBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanEffect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: none;
+  pointer-events: none;
+}
+
+.tacticalBtn:hover .scanEffect {
+  animation: btnScan 0.75s ease-in-out;
+}
+
+@keyframes btnScan {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 @media (max-width: 720px) {
   .stage {
     padding: 24px 16px 28px;
+  }
+
+  .metaRow {
+    gap: 8px 16px;
   }
 }

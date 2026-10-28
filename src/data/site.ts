@@ -23,7 +23,6 @@ export const profile = {
   firstName: 'Aniket',
   lastName: 'Kumar Nishad',
   brand: 'ANIKET // DEV',
-  age: 18,
   role: 'Aspiring Software Engineer // AI & ML',
   education: 'B.Tech in Computer Science',
   specialization: 'Artificial Intelligence and Machine Learning',
@@ -121,7 +120,7 @@ export const projects: Project[] = [
     description:
       'Systematic inquiry into foundational machine learning paradigms. Analyzing parameter tuning, gradient convergence behavior, and predictive performance boundaries across structured datasets.',
     technologies: ['Python', 'NumPy', 'Scikit-Learn', 'Statistical Modeling'],
-    github: 'https://github.com/aniket-dev',
+    github: 'https://github.com/nishadaniket174',
   },
   {
     title: 'Python Data Processing Pipeline',
@@ -130,7 +129,7 @@ export const projects: Project[] = [
     description:
       'Engineered automated data ingestion and preprocessing workflows. Handles schema normalization, anomaly detection, vector transformation, and clean dataset preparation for modeling.',
     technologies: ['Python', 'Pandas', 'Data Cleaning', 'Automation'],
-    github: 'https://github.com/aniket-dev',
+    github: 'https://github.com/nishadaniket174',
   },
   {
     title: 'Foundational AI Logic Tests',
@@ -139,7 +138,7 @@ export const projects: Project[] = [
     description:
       'Algorithmic benchmarking suite testing heuristic search algorithms, decision tree logic, and deterministic evaluation models against synthetic constraint environments.',
     technologies: ['Python', 'Search Algorithms', 'Discrete Math', 'Benchmarking'],
-    github: 'https://github.com/aniket-dev',
+    github: 'https://github.com/nishadaniket174',
   },
 ]
 
@@ -149,12 +148,12 @@ export const contact: Record<
 > = {
   github: {
     label: 'GitHub',
-    href: '', // PLACEHOLDER: add GitHub profile URL
+    href: 'https://github.com/nishadaniket174',
     pendingLabel: 'Profile link pending',
   },
   linkedin: {
     label: 'LinkedIn',
-    href: '', // PLACEHOLDER: add LinkedIn profile URL
+    href: 'https://www.linkedin.com/in/aniket-nishad-592010423/',
     pendingLabel: 'Profile link pending',
   },
   email: {
