@@ -1,17 +1,21 @@
 :root {
+  /* Tactical Night: Amber/Indigo on Deep Charcoal/Black */
   --bg: #070707;
-  --bg-soft: #0c0c0c;
-  --panel: #121212;
-  --panel-2: #171717;
-  --gunmetal: #2a2c2e;
+  --bg-soft: #0d0e12;
+  --panel: #121318;
+  --panel-2: #181a22;
+  --card-bg: rgba(14, 16, 22, 0.75);
+  --gunmetal: #232733;
   --line: rgba(201, 178, 90, 0.16);
-  --line-strong: rgba(201, 178, 90, 0.42);
+  --line-strong: rgba(201, 178, 90, 0.45);
   --accent: #c9b25a;
   --accent-soft: #a89446;
-  --accent-dim: rgba(201, 178, 90, 0.12);
+  --accent-dim: rgba(201, 178, 90, 0.14);
+  --accent-indigo: #818cf8;
   --text: #ece8dc;
   --text-muted: #b4af9f;
   --text-dim: #7a766b;
+  --panel-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
   --danger-free: #c9b25a;
   --header-h: 72px;
   --max: 1180px;
@@ -20,21 +24,24 @@
   --base-font-size: 18px;
 }
 
-/* High-Visibility (Light Mode): Clean Command Center Slate/Gray on White */
+/* High-Visibility (Lab Style): Professional Clean Slate & Industrial Contrast */
 [data-theme='high-visibility'] {
-  --bg: #f8f9fa;
-  --bg-soft: #f0f2f5;
+  --bg: #f8fafc;
+  --bg-soft: #f1f5f9;
   --panel: #ffffff;
-  --panel-2: #f1f3f6;
+  --panel-2: #f8fafc;
+  --card-bg: #f8fafc;
   --gunmetal: #e2e8f0;
-  --line: rgba(51, 65, 85, 0.18);
-  --line-strong: rgba(15, 23, 42, 0.45);
+  --line: rgba(71, 85, 105, 0.22);
+  --line-strong: rgba(30, 41, 59, 0.55);
   --accent: #b45309;
   --accent-soft: #92400e;
   --accent-dim: rgba(180, 83, 9, 0.12);
+  --accent-indigo: #4f46e5;
   --text: #0f172a;
   --text-muted: #334155;
   --text-dim: #64748b;
+  --panel-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   --danger-free: #b45309;
 }
 
@@ -59,26 +66,28 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   scroll-behavior: smooth;
-  background: var(--bg);
+  background-color: var(--bg);
   font-size: var(--base-font-size);
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-display);
   font-size: 1rem;
   letter-spacing: 0.02em;
   line-height: 1.5;
   overflow-x: hidden;
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 #root {
@@ -103,7 +112,7 @@ a {
 }
 
 :focus-visible {
-  outline: 1px solid var(--accent);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -134,34 +143,34 @@ a {
 }
 
 .grain {
-  opacity: 0.045;
+  opacity: 0.04;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
 }
 
 [data-theme='high-visibility'] .grain {
-  opacity: 0.02;
+  opacity: 0.015;
 }
 
 .scanlines {
-  opacity: 0.07;
+  opacity: 0.06;
   background: repeating-linear-gradient(
     to bottom,
     transparent 0,
     transparent 2px,
-    rgba(0, 0, 0, 0.35) 2px,
-    rgba(0, 0, 0, 0.35) 3px
+    rgba(0, 0, 0, 0.3) 2px,
+    rgba(0, 0, 0, 0.3) 3px
   );
 }
 
 [data-theme='high-visibility'] .scanlines {
-  opacity: 0.035;
+  opacity: 0.025;
   background: repeating-linear-gradient(
     to bottom,
     transparent 0,
     transparent 2px,
-    rgba(0, 0, 0, 0.1) 2px,
-    rgba(0, 0, 0, 0.1) 3px
+    rgba(15, 23, 42, 0.12) 2px,
+    rgba(15, 23, 42, 0.12) 3px
   );
 }
 
@@ -270,7 +279,6 @@ a {
   font-weight: 600;
   cursor: pointer;
   overflow: hidden;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
 .btn:active {
@@ -280,10 +288,12 @@ a {
 .btn-primary {
   background: var(--accent);
   color: #111;
+  box-shadow: 0 4px 16px var(--accent-dim);
 }
 
 [data-theme='high-visibility'] .btn-primary {
   color: #ffffff;
+  font-weight: 700;
 }
 
 .btn-primary:hover {
@@ -305,8 +315,8 @@ a {
   position: relative;
   background: var(--panel);
   border: 1px solid var(--line);
+  box-shadow: var(--panel-shadow);
   padding: 28px;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .panel:hover {

@@ -12,6 +12,11 @@
   backdrop-filter: blur(14px);
 }
 
+:global([data-theme='high-visibility']) .scrolled {
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom-color: var(--line);
+}
+
 .bar {
   width: min(100%, var(--max));
   margin: 0 auto;

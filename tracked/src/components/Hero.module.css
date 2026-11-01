@@ -37,6 +37,11 @@
   max-width: 920px;
   background: linear-gradient(90deg, rgba(12, 12, 12, 0.85), rgba(12, 12, 12, 0.45) 70%, transparent);
   border: 1px solid var(--line);
+  box-shadow: var(--panel-shadow);
+}
+
+:global([data-theme='high-visibility']) .stage {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.8) 70%, transparent);
 }
 
 .role {

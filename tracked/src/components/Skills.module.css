@@ -61,7 +61,7 @@
 }
 
 .itemCard {
-  background: rgba(0, 0, 0, 0.25);
+  background: var(--card-bg);
   border: 1px solid var(--line);
   padding: 12px 14px;
   display: flex;
