@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { navItems, profile } from '../data/site'
 import { Monogram } from './Monogram'
+import { TacticalSettings } from './TacticalSettings'
 import styles from './Header.module.css'
 
 export function Header() {
@@ -35,15 +36,18 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <button
-          type="button"
-          className={styles.menuBtn}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? 'Close' : 'Menu'}
-        </button>
+        <div className={styles.actions}>
+          <TacticalSettings />
+          <button
+            type="button"
+            className={styles.menuBtn}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? 'Close' : 'Menu'}
+          </button>
+        </div>
       </div>
       {open ? (
         <nav id="mobile-nav" className={styles.mobile} aria-label="Mobile">

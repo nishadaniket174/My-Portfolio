@@ -55,6 +55,19 @@
   }
 }
 
+:global([data-theme='high-visibility']) .vignette {
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(180, 83, 9, 0.05), transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(200, 205, 215, 0.35), transparent 50%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(240, 243, 248, 0.6));
+}
+
+:global([data-theme='high-visibility']) .grid {
+  background-image:
+    linear-gradient(rgba(100, 116, 139, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
+}
+
 @keyframes pulse {
   0%,
   100% {

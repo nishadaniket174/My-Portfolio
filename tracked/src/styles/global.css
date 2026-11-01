@@ -17,6 +17,42 @@
   --max: 1180px;
   --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --base-font-size: 18px;
+}
+
+/* High-Visibility (Light Mode): Clean Command Center Slate/Gray on White */
+[data-theme='high-visibility'] {
+  --bg: #f8f9fa;
+  --bg-soft: #f0f2f5;
+  --panel: #ffffff;
+  --panel-2: #f1f3f6;
+  --gunmetal: #e2e8f0;
+  --line: rgba(51, 65, 85, 0.18);
+  --line-strong: rgba(15, 23, 42, 0.45);
+  --accent: #b45309;
+  --accent-soft: #92400e;
+  --accent-dim: rgba(180, 83, 9, 0.12);
+  --text: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #64748b;
+  --danger-free: #b45309;
+}
+
+/* Font Scalability Matrix */
+[data-font-scale='sm'] {
+  --base-font-size: 16px;
+}
+
+[data-font-scale='md'] {
+  --base-font-size: 18px;
+}
+
+[data-font-scale='lg'] {
+  --base-font-size: 20px;
+}
+
+[data-font-scale='max'] {
+  --base-font-size: 23px;
 }
 
 *,
@@ -28,6 +64,8 @@
 html {
   scroll-behavior: smooth;
   background: var(--bg);
+  font-size: var(--base-font-size);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body {
@@ -36,10 +74,11 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   line-height: 1.5;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 #root {
@@ -56,6 +95,7 @@ svg {
 button,
 a {
   font-family: inherit;
+  cursor: pointer;
 }
 
 a {
@@ -99,6 +139,10 @@ a {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
 }
 
+[data-theme='high-visibility'] .grain {
+  opacity: 0.02;
+}
+
 .scanlines {
   opacity: 0.07;
   background: repeating-linear-gradient(
@@ -107,6 +151,17 @@ a {
     transparent 2px,
     rgba(0, 0, 0, 0.35) 2px,
     rgba(0, 0, 0, 0.35) 3px
+  );
+}
+
+[data-theme='high-visibility'] .scanlines {
+  opacity: 0.035;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 3px
   );
 }
 
@@ -198,7 +253,9 @@ a {
   border-right: 1px solid var(--accent);
 }
 
+/* Tactical Click Ripple & Activation Button Style */
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -212,7 +269,12 @@ a {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .btn-primary {
@@ -220,10 +282,14 @@ a {
   color: #111;
 }
 
+[data-theme='high-visibility'] .btn-primary {
+  color: #ffffff;
+}
+
 .btn-primary:hover {
-  background: #d4bf6e;
+  background: var(--accent-soft);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(201, 178, 90, 0.18);
+  box-shadow: 0 8px 24px var(--accent-dim);
 }
 
 .btn-ghost {
@@ -237,9 +303,10 @@ a {
 
 .panel {
   position: relative;
-  background: linear-gradient(180deg, var(--panel) 0%, #0e0e0e 100%);
+  background: var(--panel);
   border: 1px solid var(--line);
   padding: 28px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .panel:hover {

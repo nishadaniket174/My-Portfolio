@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion, type Variants } from 'framer-motion'
+import { SystemSettingsProvider } from './context/SystemSettingsContext'
 import { About } from './components/About'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -17,11 +18,23 @@ function shouldBoot() {
   return sessionStorage.getItem('ak-interface-ready') !== '1'
 }
 
+const sectionVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  },
+}
+
 export default function App() {
   const [booting, setBooting] = useState(shouldBoot)
 
   return (
-    <>
+    <SystemSettingsProvider>
       <a className="skip-link" href="#home">
         Skip to content
       </a>
@@ -40,14 +53,56 @@ export default function App() {
       <Scene />
       <Header />
       <main className="site-main">
-        <Hero />
-        <About />
-        <Skills />
-        <Journey />
-        <Projects />
-        <Contact />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={sectionVariants}
+        >
+          <Hero />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={sectionVariants}
+        >
+          <About />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={sectionVariants}
+        >
+          <Skills />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={sectionVariants}
+        >
+          <Journey />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={sectionVariants}
+        >
+          <Projects />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={sectionVariants}
+        >
+          <Contact />
+        </motion.div>
       </main>
       <Footer />
-    </>
+    </SystemSettingsProvider>
   )
 }

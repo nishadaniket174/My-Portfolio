@@ -1,5 +1,44 @@
 # CHANGE LOG: ARCHITECTURAL OVERHAUL
 
+## [2026-11-01] Architectural Overhaul: System Preferences, Visual Protocols & Accessible Scalability
+
+### Overview
+Implemented an accessible, customizable "System Settings" layer without violating zero-git-access constraints. Created `SystemSettingsContext` with persistent local storage, interactive high-contrast theme switching ("Tactical Night" vs. "High-Visibility" light mode), dynamic typography scaling across four accessible tiers (`sm`, `md`, `lg`, `max`), tactical click ripples and active state feedback, and streamlined section-to-section scroll entrance animations via Framer Motion.
+
+---
+
+### Key Architectural Changes
+1. **Context & State Management:**
+   - **File Created:** `tracked/src/context/SystemSettingsContext.tsx`
+   - **Capabilities:** Manages `ThemeMode` (`'tactical-night' | 'high-visibility'`) and `FontSizeScale` (`'sm' | 'md' | 'lg' | 'max'`). Automatically binds data attributes (`data-theme`, `data-font-scale`) to `document.documentElement` and persists selections across page visits in `localStorage`.
+
+2. **Tactical UI Control Panel:**
+   - **Files Created:**
+     - `tracked/src/components/TacticalSettings.tsx`
+     - `tracked/src/components/TacticalSettings.module.css`
+   - **Capabilities:** Floating header control trigger `[SYS_CONFIG]` featuring an animated tactical radar pulse, collapsible high-tech command panel with click-outside protection, one-tap theme switching, and a 4-tier font scalability grid (`COMPACT 88%`, `STANDARD 100%`, `LARGE 115%`, `A11Y-MAX 130%`).
+
+3. **Styling & Accessibility Hierarchy:**
+   - **File Modified:** `tracked/src/styles/global.css`
+   - **Capabilities:**
+     - *Tactical Night:* Deep black `#070707`, tactical panels `#121212`, amber gold accent `#c9b25a`.
+     - *High-Visibility:* Clean command center slate/gray `#f8f9fa`, pure white panels `#ffffff`, high-contrast deep amber `#b45309`, and slate-900 typography `#0f172a`.
+     - *Typography Scalability:* Variable `--base-font-size` dynamically driven by root attributes from 16px to 23px with REM-based scaling across all components.
+     - *Click Ripple & Activation:* Added tactile `:active { transform: scale(0.97); }` and button hover states.
+   - **File Modified:** `tracked/src/components/Scene.module.css`
+     - Adapted background ambient vignette and grid line tokens to blend seamlessly with High-Visibility mode.
+
+4. **Interactive Motion & Polish:**
+   - **File Modified:** `tracked/src/App.tsx`
+     - Wrapped the main application in `SystemSettingsProvider`.
+     - Integrated Framer Motion `motion.div` section wrappers with calibrated `whileInView` reveals (`duration: 0.6`, `ease: 'easeOut'`).
+   - **File Modified:** `tracked/src/components/Journey.tsx`
+     - Added staggered list reveals and interactive slide-in hover response.
+   - **File Modified:** `tracked/src/components/Header.tsx` & `tracked/src/components/Header.module.css`
+     - Placed `TacticalSettings` seamlessly into the primary header bar alongside mobile menu triggers.
+
+---
+
 ## [2026-11-01] Architectural Overhaul: Dynamic Content, Category Transitions & WIP Diagnostics
 
 ### Overview
@@ -47,4 +86,3 @@ Executed a full-scale architectural overhaul targeting professional B.Tech stude
 - **Responsive & Mobile Polish:**
   - Optimized grid breaks and font clamps on `Projects.module.css`, `ProjectCard.module.css`, and `About.module.css`.
   - Maintained GPU acceleration (`transform`, `opacity`, `backdropFilter`) and smooth scrolling throughout.
-

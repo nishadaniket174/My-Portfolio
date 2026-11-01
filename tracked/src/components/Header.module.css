@@ -73,6 +73,12 @@
   width: 100%;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .menuBtn {
   display: none;
   background: none;
