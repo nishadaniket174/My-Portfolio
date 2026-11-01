@@ -21,3 +21,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+current_site.png
+untracked/ *
+node_modules/ *
+dist/ *
+untracked/ *
+node_modules/ *
+dist/ *

@@ -6,8 +6,9 @@ import styles from './About.module.css'
 const facts = [
   { label: 'Name', value: profile.fullName },
   { label: 'Program', value: profile.education },
-  { label: 'Focus', value: profile.specialization },
-  { label: 'College', value: profile.college },
+  { label: 'Specialization', value: profile.specialization },
+  { label: 'Institution', value: profile.college },
+  { label: 'Timeline', value: profile.academicYear },
   { label: 'Stage', value: profile.stage },
 ]
 
@@ -22,7 +23,7 @@ export function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          01 // Profile
+          01 // Profile & Academic Core
         </motion.p>
         <motion.h2
           className="section-title"
@@ -42,7 +43,10 @@ export function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <HudCorners />
-            <p className="meta">Personal profile</p>
+            <div className={styles.bioHeader}>
+              <span className={styles.terminalIndicator}>[IDENTITY_MATRIX // VERIFIED]</span>
+              <p className="meta">Personal Profile & Vision</p>
+            </div>
             <div className={styles.copy}>
               {profile.about.split('\n\n').map((para) => (
                 <p key={para.slice(0, 24)}>{para}</p>

@@ -8,16 +8,32 @@
   min-height: 100%;
 }
 
+.bioHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.terminalIndicator {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
 .copy {
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .copy p {
   margin: 0 0 16px;
   color: var(--text-muted);
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   line-height: 1.7;
-  max-width: 58ch;
+  max-width: 60ch;
 }
 
 .facts {
@@ -29,9 +45,14 @@
 .fact {
   background: var(--panel);
   border: 1px solid var(--line);
-  padding: 16px 18px;
+  padding: 14px 18px;
   display: grid;
-  gap: 6px;
+  gap: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.fact:hover {
+  border-color: var(--line-strong);
 }
 
 .fact dt {
@@ -44,12 +65,14 @@
 
 .fact dd {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   letter-spacing: 0.03em;
+  word-break: break-word;
 }
 
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
