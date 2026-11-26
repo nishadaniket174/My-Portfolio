@@ -26,6 +26,16 @@ export type SkillCategory = {
   }[]
 }
 
+export type ProofOfWorkItem = {
+  id: string
+  title: string
+  badge: string
+  description: string
+  github: string
+  liveDemo: string
+  technologies: string[]
+}
+
 export const profile = {
   fullName: 'Aniket Kumar Nishad',
   firstName: 'Aniket',
@@ -113,6 +123,29 @@ export const skillCategories: SkillCategory[] = [
         details: 'Navigating component-based web layouts, basic frontend styling, and inspecting web application code.',
       },
     ],
+  },
+]
+
+export const proofOfWork: ProofOfWorkItem[] = [
+  {
+    id: 'llm-playground',
+    title: 'LLM Playground',
+    badge: 'INTERACTIVE_APPLICATION',
+    description:
+      'A provider-agnostic AI chat playground that lets users connect their own API keys and experiment with cloud AI models. It includes multi-provider support, streaming chat, system prompts, model settings, and model discovery.',
+    github: 'https://github.com/nishadaniket174/LLM-Playground',
+    liveDemo: 'https://llm-playground-zeta.vercel.app/',
+    technologies: ['Multi-Provider AI', 'Streaming Chat', 'Model Discovery', 'API Integration'],
+  },
+  {
+    id: 'token-explorer',
+    title: 'Token Explorer',
+    badge: 'EDUCATIONAL_VISUALIZER',
+    description:
+      'An interactive educational visualization of an LLM pipeline, exploring tokenization, embeddings, attention patterns, and next-token generation through visual demonstrations.',
+    github: 'https://github.com/nishadaniket174/Token-explorer',
+    liveDemo: 'https://tokenexplorer-mu.vercel.app/',
+    technologies: ['LLM Pipeline', 'Tokenization', 'Attention Maps', 'Interactive Demo'],
   },
 ]
 

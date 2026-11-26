@@ -104,8 +104,121 @@
   }
 }
 
+/* Proof of Work Area */
+.powSection {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.powHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.powKicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.powTitle {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.powGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.powCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.powCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-dim);
+}
+
+.powCardHeader {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.powProjectTitle {
+  margin: 4px 0 0;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+
+.powDescription {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.powTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.powTag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.powActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.powLinkBtn {
+  font-size: 0.85rem;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .powGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .categoryPanel:hover {
+  .categoryPanel:hover,
+  .powCard:hover {
     transform: none;
   }
 }
