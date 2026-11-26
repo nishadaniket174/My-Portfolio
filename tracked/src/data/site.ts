@@ -39,7 +39,7 @@ export const profile = {
   stage: 'Active // Foundations to Intelligent Systems',
   interest: 'Autonomous Agents, Deep Learning & Scalable Systems',
   intro:
-    'Undergrad at Newton School of Technology obsessed with deconstructing complex problems into high-performance Python, neural architectures, and intelligent scalable systems.',
+    'First-year CSE student at Newton School of Technology, exploring software development, problem-solving, and the fundamentals of AI and machine learning through projects and open-source contributions.',
   about: `I am a first-year B.Tech student in Computer Science and Engineering (Artificial Intelligence and Machine Learning) at Newton School of Technology, Pune, pursuing my degree from Ajeenkya D. Y. Patil University. My primary technical focus is software development, problem-solving, and exploring Artificial Intelligence, Large Language Models, and Generative AI, particularly in the areas of AI agents and automation. I aim to strengthen my engineering skills through practical projects and open-source contributions while exploring emerging technologies. My professional objective is to secure software engineering internships at product-based technology companies and work towards becoming a Software Development Engineer.`,
 }
 
@@ -52,65 +52,65 @@ export const hudLabels = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: 'Current Learning',
-    status: 'ACTIVE_PIPELINE',
+    category: 'Version Control & Open Source',
+    status: 'DEMONSTRATED_PRACTICE',
     items: [
       {
-        name: 'Python Systems & OOP',
-        focus: 'Data Structures, Scripting & Concurrency',
-        details: 'Memory layouts, algorithmic efficiency, clean OOP patterns, and computational automation.',
+        name: 'Git & GitHub Workflows',
+        focus: 'Branching, Pull Requests & Code Review',
+        details: 'Hands-on repository management, feature branching, clean commit conventions, and open-source contributions from S&AI coursework.',
       },
       {
-        name: 'Computational Logic & Optimization',
-        focus: 'Algorithmic Thinking & Problem Solving',
-        details: 'Deconstructing real-world constraints into modular, testable, Big-O optimized logic paths.',
+        name: 'Collaborative Development',
+        focus: 'Issue Tracking & Project Documentation',
+        details: 'Structuring project roadmaps, tracking task progress, and documenting architecture and decisions for peer review.',
       },
       {
-        name: 'Scientific Computing Stack',
-        focus: 'NumPy, Pandas & Vectorized Ops',
-        details: 'High-throughput tensor manipulations, matrix broadcasts, data wrangling, and pipeline telemetry.',
+        name: 'Repository Hygiene',
+        focus: 'Ignoring Private Artifacts & Isolation',
+        details: 'Managing .gitignore rules, untracked local workspaces, and maintaining clean git histories without committing secret or local configs.',
       },
     ],
   },
   {
-    category: 'Research Interests',
-    status: 'ACTIVE_RESEARCH',
+    category: 'AI-Assisted Development',
+    status: 'ACTIVE_WORKFLOW',
     items: [
       {
-        name: 'Neural Networks & Deep Learning',
-        focus: 'Model Architectures & Representations',
-        details: 'Forward/backward propagation mechanics, adaptive gradient optimization (Adam, SGD), and loss landscape analysis.',
+        name: 'Prompt Engineering & Directing',
+        focus: 'Context Specification & Instruction Design',
+        details: 'Drafting structured requirements, system prompts, and scoped constraints to guide AI agents effectively.',
       },
       {
-        name: 'Natural Language Processing',
-        focus: 'Transformers, Embeddings & Tokenization',
-        details: 'Attention mechanisms, sequence-to-sequence modeling, semantic vector search, and token embedding geometry.',
+        name: 'Agent Review & Refinement',
+        focus: 'Code Evaluation & Verification Loops',
+        details: 'Reviewing AI-generated code for correctness, eliminating hallucinations, and iteratively testing outputs against design goals.',
       },
       {
-        name: 'Computer Vision',
-        focus: 'Spatial Representations & Convolutions',
-        details: 'Feature extraction filters, convolutional layers, spatial invariance, and automated image transformation pipelines.',
+        name: 'AI Tooling & Automation',
+        focus: 'Copilots, Agentic Workflows & CLI Tools',
+        details: 'Utilizing modern AI coding assistants and automation workflows to accelerate iterative development and debugging.',
       },
     ],
   },
   {
-    category: 'Academic Foundations',
-    status: 'THEORETICAL_CORE',
+    category: 'Programming & Foundations',
+    status: 'ACADEMIC_CORE',
     items: [
       {
-        name: 'Algorithms & Data Structures',
-        focus: 'Trees, Graphs, Sorting & Dynamic Programming',
-        details: 'Formal time/space complexity analysis, recursive tree traversals, and optimal graph search (Dijkstra, A*).',
+        name: 'Python Fundamentals',
+        focus: 'Core Syntax, Scripts & OOP Concepts',
+        details: 'Writing modular procedural and object-oriented scripts, handling file I/O, and implementing structured logic.',
       },
       {
-        name: 'Calculus & Linear Algebra for ML',
-        focus: 'Matrix Decompositions & Vector Calculus',
-        details: 'Gradients, Jacobians, Hessians, eigenvalues, and objective function optimization on Riemannian surfaces.',
+        name: 'Problem-Solving & Logic',
+        focus: 'Algorithmic Thinking & Mathematics',
+        details: 'First-year foundations in discrete mathematics, computational logic, and deconstructing problem statements into steps.',
       },
       {
-        name: 'Discrete Mathematics & Probability',
-        focus: 'Formal Logic, Graph Theory & Bayesian Inference',
-        details: 'Predicate calculus, combinatorics, proof techniques, Bayes theorem, and stochastic distributions.',
+        name: 'Web Fundamentals',
+        focus: 'HTML, CSS & Component Basics',
+        details: 'Navigating component-based web layouts, basic frontend styling, and inspecting web application code.',
       },
     ],
   },

@@ -25,6 +25,6 @@ current_site.png
 untracked/ *
 node_modules/ *
 dist/ *
-untracked/ *
-node_modules/ *
-dist/ *
+
+# Agent private workspace
+.agent-workspace/
