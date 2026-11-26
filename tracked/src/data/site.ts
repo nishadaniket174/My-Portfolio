@@ -36,6 +36,18 @@ export type ProofOfWorkItem = {
   technologies: string[]
 }
 
+export type OpenSourceContribution = {
+  id: string
+  title: string
+  task: string
+  prUrl: string
+  prNumber: number
+  issueUrl: string
+  issueNumber: number
+  modifications: string
+  rationale: string
+}
+
 export const profile = {
   fullName: 'Aniket Kumar Nishad',
   firstName: 'Aniket',
@@ -149,12 +161,144 @@ export const proofOfWork: ProofOfWorkItem[] = [
   },
 ]
 
-export const exploring = [
-  { label: 'Python Systems & Data Structures', detail: 'Syntax, memory profiles, modular package architecture, and scripting.' },
-  { label: 'Computational Logic & Graph Algorithms', detail: 'Deconstructing complex networks into verifiable computational routines.' },
-  { label: 'Linear Algebra & Multivariate Calculus', detail: 'Gradients, vector spaces, and loss optimization math for machine learning.' },
-  { label: 'Neural Network Architectures & Backprop', detail: 'Weight updates, activation dynamics, and computational graph backprop.' },
-  { label: 'Data Preprocessing & Ingestion Pipelines', detail: 'Normalization, tokenization, anomaly filtering, and automated wrangling.' },
+export const repositoryInfo = {
+  name: 'S-AI-Projects / TheAlgorithms-JavaScript',
+  url: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript',
+  description:
+    'Submitted pull requests to the open-source algorithm repository, focusing on regression testing, mathematical validation, and edge-case handling.',
+}
+
+export const openSourceContributions: OpenSourceContribution[] = [
+  {
+    id: 'contrib-01',
+    title: 'Coin Change',
+    task: 'R50-T031',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/69',
+    prNumber: 69,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/31',
+    issueNumber: 31,
+    modifications:
+      'Added regression tests covering valid combinations, boundary conditions, impossible amounts, repeated denominations, and input preservation.',
+    rationale:
+      'Protect dynamic programming behavior against regressions and improve confidence in edge-case handling.',
+  },
+  {
+    id: 'contrib-02',
+    title: 'DecimalIsolate',
+    task: 'R50-T032',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/70',
+    prNumber: 70,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/32',
+    issueNumber: 32,
+    modifications:
+      'Corrected decimal-matching regex behavior and added tests for fractions, integers, negative values, and exponent notation.',
+    rationale:
+      'Improve extraction reliability and make input boundaries explicit.',
+  },
+  {
+    id: 'contrib-03',
+    title: 'ExponentialFunction',
+    task: 'R50-T033',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/71',
+    prNumber: 71,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/33',
+    issueNumber: 33,
+    modifications:
+      'Added 22 reference and validation tests, invalid-input checks, and Taylor-series documentation.',
+    rationale:
+      'Independently validate mathematical behavior and clarify the implementation.',
+  },
+  {
+    id: 'contrib-04',
+    title: 'OctToDecimal',
+    task: 'R50-T034',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/72',
+    prNumber: 72,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/34',
+    issueNumber: 34,
+    modifications:
+      'Added expected-value tests, repeatability checks, input non-mutation checks, and documentation of invariants.',
+    rationale:
+      'Ensure consistent conversion behavior without unintended side effects.',
+  },
+  {
+    id: 'contrib-05',
+    title: 'Circle',
+    task: 'R50-T035',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/73',
+    prNumber: 73,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/35',
+    issueNumber: 35,
+    modifications:
+      'Added tests for repeatability, input isolation, zero values, and ordinary geometric cases, with supporting documentation.',
+    rationale:
+      'Improve confidence in deterministic geometry calculations and independent instances.',
+  },
+  {
+    id: 'contrib-06',
+    title: 'Coordinate / Euclidean Distance',
+    task: 'R50-T036',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/74',
+    prNumber: 74,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/36',
+    issueNumber: 36,
+    modifications:
+      'Refactored coordinate differences using dx and dy, and used Math.hypot for distance calculation. Added regression tests and documentation.',
+    rationale:
+      'Improve readability and maintainability while preserving mathematical behavior and the existing interface.',
+  },
+  {
+    id: 'contrib-07',
+    title: 'generateCombinations',
+    task: 'R50-T037',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/75',
+    prNumber: 75,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/37',
+    issueNumber: 37,
+    modifications:
+      'Added a worked example for n=3, k=2, a recursive backtracking trace, and boundary tests.',
+    rationale:
+      'Make recursive state transitions easier to understand and verify.',
+  },
+  {
+    id: 'contrib-08',
+    title: 'OuncesToKilograms',
+    task: 'R50-T038',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/76',
+    prNumber: 76,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/38',
+    issueNumber: 38,
+    modifications:
+      'Added tests for valid values, zero, missing values, non-numeric inputs, NaN, failure handling, state preservation, and recovery. Added JSDoc documentation.',
+    rationale:
+      'Define and test the function\'s success and failure behavior.',
+  },
+  {
+    id: 'contrib-09',
+    title: 'Liouville Function',
+    task: 'R50-T039',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/77',
+    prNumber: 77,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/39',
+    issueNumber: 39,
+    modifications:
+      'Added complexity analysis, empirical benchmarks, and tests for small, ordinary, large composite, and prime inputs.',
+    rationale:
+      'Connect theoretical complexity with practical performance and correctness.',
+  },
+  {
+    id: 'contrib-10',
+    title: 'CoPrimeCheck',
+    task: 'R50-T040',
+    prUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/pull/78',
+    prNumber: 78,
+    issueUrl: 'https://github.com/S-AI-Projects/TheAlgorithms-JavaScript/issues/40',
+    issueNumber: 40,
+    modifications:
+      'Added examples, shared-divisor cases, symmetry and repeatability checks, input-preservation tests, and a deliberate mutation test with documentation.',
+    rationale:
+      'Verify the coprimality condition gcd(a, b) = 1 and ensure tests can detect incorrect behavior.',
+  },
 ]
 
 export const projects: Project[] = [

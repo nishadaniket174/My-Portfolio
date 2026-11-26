@@ -6,7 +6,7 @@ import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
-import { Journey } from './components/Journey'
+import { Contributions } from './components/Contributions'
 import { Loader } from './components/Loader'
 import { Projects } from './components/Projects'
 import { Scene } from './components/Scene'
@@ -83,7 +83,7 @@ export default function App() {
           viewport={{ once: true, margin: '-60px' }}
           variants={sectionVariants}
         >
-          <Journey />
+          <Contributions />
         </motion.div>
         <motion.div
           initial="hidden"
