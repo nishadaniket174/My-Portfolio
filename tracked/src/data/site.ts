@@ -40,9 +40,7 @@ export const profile = {
   interest: 'Autonomous Agents, Deep Learning & Scalable Systems',
   intro:
     'Undergrad at Newton School of Technology obsessed with deconstructing complex problems into high-performance Python, neural architectures, and intelligent scalable systems.',
-  about: `I am a Computer Science undergraduate at Newton School of Technology specializing in Artificial Intelligence and Machine Learning. Bridging the gap between raw algorithmic fundamentals and production-grade intelligent systems, my focus is locked on engineering solutions that scale cleanly.
-
-From mastering low-level computational logic and Python data pipelines to exploring deep neural nets, NLP transformers, and computer vision models, I approach development with intense learning velocity. I don't just study modern AI paradigms—I benchmark them, dissect their mathematical foundations (linear algebra, multivariate calculus, optimization), and convert theoretical math into reliable, high-impact software.`,
+  about: `I am a first-year B.Tech student in Computer Science and Engineering (Artificial Intelligence and Machine Learning) at Newton School of Technology, Pune, pursuing my degree from Ajeenkya D. Y. Patil University. My primary technical focus is software development, problem-solving, and exploring Artificial Intelligence, Large Language Models, and Generative AI, particularly in the areas of AI agents and automation. I aim to strengthen my engineering skills through practical projects and open-source contributions while exploring emerging technologies. My professional objective is to secure software engineering internships at product-based technology companies and work towards becoming a Software Development Engineer.`,
 }
 
 export const hudLabels = [
