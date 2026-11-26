@@ -354,7 +354,7 @@ export const projects: Project[] = [
 
 export const contact: Record<
   'github' | 'linkedin' | 'email',
-  { label: string; href: string; pendingLabel: string }
+  { label: string; href: string; value?: string; pendingLabel: string }
 > = {
   github: {
     label: 'GitHub',
@@ -368,7 +368,8 @@ export const contact: Record<
   },
   email: {
     label: 'Email',
-    href: '', // PLACEHOLDER: add mailto:you@example.com
+    href: '',
+    value: 'nishadaniket2026@gmail.com',
     pendingLabel: 'Address pending',
   },
 }
@@ -377,6 +378,7 @@ export const navItems = [
   { id: 'home', label: 'HOME' },
   { id: 'about', label: 'ABOUT' },
   { id: 'skills', label: 'SKILLS' },
+  { id: 'contributions', label: 'CONTRIBUTIONS' },
   { id: 'projects', label: 'PROJECTS' },
   { id: 'contact', label: 'CONTACT' },
 ] as const

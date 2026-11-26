@@ -39,10 +39,12 @@ export function Contact() {
               whileHover={{ y: -4, scale: 1.015 }}
             >
               <HudCorners />
-              <p className="meta">{item.href ? 'Available' : 'Pending'}</p>
+              <p className="meta">{item.href || item.value ? 'Available' : 'Pending'}</p>
               <h3>{item.label}</h3>
-              {item.href ? (
-                <a href={item.href} target={item.href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer">
+              {item.value ? (
+                <p className={styles.emailText}>{item.value}</p>
+              ) : item.href ? (
+                <a href={item.href} target="_blank" rel="noreferrer">
                   Open {item.label} &rarr;
                 </a>
               ) : (
