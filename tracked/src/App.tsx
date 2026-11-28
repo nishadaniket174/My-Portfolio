@@ -9,6 +9,7 @@ import { Hero } from './components/Hero'
 import { Contributions } from './components/Contributions'
 import { Loader } from './components/Loader'
 import { Projects } from './components/Projects'
+import { Education } from './components/Education'
 import { Scene } from './components/Scene'
 import { Skills } from './components/Skills'
 
@@ -92,6 +93,14 @@ export default function App() {
           variants={sectionVariants}
         >
           <Projects />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={sectionVariants}
+        >
+          <Education />
         </motion.div>
         <motion.div
           initial="hidden"

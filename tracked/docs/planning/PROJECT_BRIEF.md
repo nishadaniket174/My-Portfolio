@@ -15,7 +15,14 @@ Faculty review requirements dictate presenting at least two in-depth technical p
 4. **Individual Contribution:** What was designed, written, tested, and verified using AI-assisted engineering tools.
 5. **Repository & Documentation Links:** Verified source code and live application links without fabrication.
 
-## 3. Primary Featured Projects (Engineering // Projects & Systems)
+## 3. Academic Structure & Education
+- **Degree:** B.Tech in Computer Science and Engineering (Artificial Intelligence & Machine Learning)
+- **Campus / Instruction:** Newton School of Technology, Pune
+- **Degree-Awarding Body:** Ajeenkya D. Y. Patil University
+- **Graduation:** 2030 (Expected)
+- **Achievements Policy:** Zero unverified awards, certifications, or hackathon claims. Focus placed honestly on practical software building, open-source code contributions, and rigorous undergraduate foundations.
+
+## 4. Primary Featured Projects (Engineering // Projects & Systems)
 1. **Weekwise (Adaptive Study-Planning & Schedule Recovery Engine):**
    - Live URL: `https://calendar-kappa-five-87.vercel.app/`
    - GitHub: `https://github.com/nishadaniket174/Calendar`

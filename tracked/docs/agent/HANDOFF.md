@@ -2,16 +2,16 @@
 
 ## Current Status
 - Application: `tracked/` running React 19 + TypeScript 5.9 + Vite 7 + Framer Motion.
-- Build Status: Verified with zero TypeScript or Vite bundle errors (`npm run build` passes in ~540ms).
-- Project Philosophy: **Quality over quantity**. The **Engineering // Projects & Systems** section focuses strictly on two substantial, meaningful projects:
-  1. **Weekwise:** Adaptive student study-planning & schedule recovery platform.
-     - Live Demo: `https://calendar-kappa-five-87.vercel.app/`
-     - GitHub Repository: `https://github.com/nishadaniket174/Calendar`
-     - Features complete academic dossier (Problem Statement, Solution Architecture, Tech Stack rationales, Individual Contribution, Roadmap).
-  2. **minigit:** Systems-level cleanroom Git implementation built from scratch in Python.
-     - GitHub Repository: `https://github.com/nishadaniket174/minigit`
-     - Features complete systems breakdown (Content addressing, SHA-1 object store, binary index, commit DAGs, CLI interop with real Git).
-- Proof of Work: **LLM Playground** and **Token Explorer** remain exclusively featured in the Proof of Work block under Skills to avoid redundant duplication.
+- Build Status: Verified with zero TypeScript or Vite bundle errors (`npm run build` passes in ~550ms).
+- Page Flow Sequence:
+  1. Hero (`#home`)
+  2. About Me (`#about`)
+  3. Skills & Proof of Work (`#skills`)
+  4. Open-Source Contributions (`#contributions`)
+  5. Technical Projects (`#projects`)
+  6. Education & Achievements (`#education`)
+  7. Let's Connect (`#contact`)
+- Education & Achievements Section: Fully implemented with verified institutional wording (Newton School of Technology, Pune / Ajeenkya D. Y. Patil University, graduation 2030) and restrained current focus statement (no unearned awards or fabricated badges).
 - Git Status: No Git operations were performed. Working tree remains clean for owner review.
 
 ## Key Files

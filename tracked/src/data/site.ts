@@ -1,3 +1,15 @@
+export type EducationDetail = {
+  institution: string
+  location: string
+  degree: string
+  specialization: string
+  degreeAwardingBody: string
+  expectedGraduation: string
+  status: string
+  primaryDescription: string
+  focusStatement: string
+}
+
 export type TechStackItem = {
   name: string
   role: string
@@ -530,6 +542,20 @@ export const projects: Project[] = [
   },
 ]
 
+export const educationData: EducationDetail = {
+  institution: 'Newton School of Technology',
+  location: 'Pune, India',
+  degree: 'B.Tech in Computer Science and Engineering',
+  specialization: 'Artificial Intelligence & Machine Learning',
+  degreeAwardingBody: 'Ajeenkya D. Y. Patil University',
+  expectedGraduation: '2030',
+  status: 'First-year undergraduate student, currently pursuing the degree',
+  primaryDescription:
+    'First-year B.Tech student in Computer Science and Engineering, specializing in Artificial Intelligence & Machine Learning, at Newton School of Technology, Pune. Pursuing my degree through Ajeenkya D. Y. Patil University.',
+  focusStatement:
+    'Currently focused on strengthening my computer science foundations, developing practical software engineering skills, and building projects alongside my undergraduate studies.',
+}
+
 export const contact: Record<
   'github' | 'linkedin' | 'email',
   { label: string; href: string; value?: string; pendingLabel: string }
@@ -558,5 +584,6 @@ export const navItems = [
   { id: 'skills', label: 'SKILLS' },
   { id: 'contributions', label: 'CONTRIBUTIONS' },
   { id: 'projects', label: 'PROJECTS' },
+  { id: 'education', label: 'EDUCATION' },
   { id: 'contact', label: 'CONTACT' },
 ] as const

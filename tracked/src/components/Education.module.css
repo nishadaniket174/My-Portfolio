@@ -1,0 +1,270 @@
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sectionSubtext {
+  margin: 0 0 16px;
+  max-width: 80ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+}
+
+.primaryCard,
+.achievementsCard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--panel-shadow);
+}
+
+.cardAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.cardAccentAlt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--line-strong);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  padding: 2px 8px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.badgeAlt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.gradBadge,
+.statusLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.primaryStatementBox {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.statementKicker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.primaryStatement {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.credentialsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.credentialItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+}
+
+.credTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.credKicker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.credLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.credValue {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.credSub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.focusContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.focusTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.focusStatement {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.focusHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+}
+
+.highlightDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.highlightHeading {
+  margin: 0 0 2px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.highlightText {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.transparencyNote {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 2px solid var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.noteKicker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.noteText {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
