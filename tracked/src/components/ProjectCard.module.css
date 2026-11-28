@@ -6,6 +6,7 @@
   padding: 24px 22px;
   background: var(--panel);
   border: 1px solid var(--line);
+  box-shadow: var(--panel-shadow);
   transition: transform 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
   user-select: none;
@@ -13,7 +14,16 @@
 
 .card:hover {
   transform: translateY(-4px);
+  border-color: var(--line-strong);
+}
+
+.featuredCard {
   border-color: var(--accent-dim);
+  background: linear-gradient(180deg, var(--panel) 0%, var(--bg-soft) 100%);
+}
+
+.featuredCard:hover {
+  border-color: var(--accent);
 }
 
 .accent {
@@ -50,7 +60,7 @@
   letter-spacing: 0.14em;
   padding: 2px 6px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
   color: var(--text-muted);
   text-transform: uppercase;
 }
@@ -60,10 +70,11 @@
   font-size: 10px;
   letter-spacing: 0.14em;
   padding: 3px 8px;
-  background: rgba(229, 180, 59, 0.1);
-  border: 1px solid var(--accent-dim);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
   color: var(--accent);
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .title {
@@ -76,7 +87,7 @@
 }
 
 .desc {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   color: var(--text-muted);
   line-height: 1.6;
   font-size: 0.95rem;
@@ -88,7 +99,7 @@
   flex-wrap: wrap;
   gap: 6px;
   list-style: none;
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   padding: 0;
 }
 
@@ -103,6 +114,32 @@
   background: var(--card-bg);
 }
 
+.specHighlight {
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border-left: 2px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.specKicker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.specPreview {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -111,6 +148,39 @@
   gap: 12px;
   padding-top: 12px;
   border-top: 1px solid var(--line);
+}
+
+.specBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.specBtn:hover {
+  background: var(--accent);
+  color: #111;
+}
+
+.specBtnIcon {
+  font-size: 14px;
+}
+
+.externalLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .actionBtn {
@@ -132,6 +202,16 @@
 
 .indicator {
   color: var(--accent);
+}
+
+.pendingRepoTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  border: 1px dashed var(--line);
+  padding: 3px 6px;
+  text-transform: uppercase;
 }
 
 .diagTrigger {

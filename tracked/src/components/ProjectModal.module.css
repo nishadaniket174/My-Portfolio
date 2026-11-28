@@ -1,0 +1,506 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(4, 4, 6, 0.82);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.modalPanel {
+  position: relative;
+  width: min(100%, 960px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+}
+
+.accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px 18px;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.statusBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  padding: 2px 8px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.categoryBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 2px 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.closeBtn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  padding: 8px 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.closeBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.modalContent {
+  padding: 28px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.actionBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+}
+
+.actionLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pendingRepoBadge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  padding: 8px 14px;
+  border: 1px dashed var(--line);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.stageIndicator {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-align: right;
+}
+
+.stageLabel {
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+}
+
+.stageValue {
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  max-width: 38ch;
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionIndex {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.problemText,
+.solutionText {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.audienceCallout {
+  padding: 12px 16px;
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent);
+  margin-top: 6px;
+}
+
+.calloutLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.calloutText {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.layersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.layerCard {
+  padding: 14px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.layerHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.layerIdx {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  font-weight: 700;
+  padding: 2px 6px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+}
+
+.layerName {
+  margin: 0;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.layerDetails {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.workflowBox {
+  padding: 12px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  margin-top: 4px;
+}
+
+.workflowLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.workflowText {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.techTable {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+}
+
+.techRow {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--card-bg);
+  gap: 16px;
+  align-items: center;
+}
+
+.techRow:last-child {
+  border-bottom: none;
+}
+
+.techColName {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.techItemName {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.techItemRole {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.techItemPurpose {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.contributionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+}
+
+.contributionSummary {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tasksLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.tasksList ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tasksList li {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.aiDisclosure {
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 2px solid var(--line-strong);
+}
+
+.aiLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.aiText {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.plannedList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.plannedList li {
+  padding: 8px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.planMarker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+}
+
+.footerCloseBtn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.footerCloseBtn:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .backdrop {
+    padding: 12px;
+  }
+
+  .modalHeader {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .modalContent {
+    padding: 16px;
+  }
+
+  .layersGrid,
+  .plannedList {
+    grid-template-columns: 1fr;
+  }
+
+  .techRow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .stageIndicator {
+    text-align: left;
+  }
+}

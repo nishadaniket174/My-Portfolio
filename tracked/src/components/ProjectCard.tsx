@@ -6,9 +6,10 @@ import styles from './ProjectCard.module.css'
 
 type Props = {
   project: Project
+  onOpenSpecs?: (project: Project) => void
 }
 
-export function ProjectCard({ project }: Props) {
+export function ProjectCard({ project, onOpenSpecs }: Props) {
   const [inspecting, setInspecting] = useState(false)
 
   const archive = project.archiveStatus || {
@@ -17,19 +18,27 @@ export function ProjectCard({ project }: Props) {
     syncProgress: 'SYNC TELEMETRY ACTIVE',
   }
 
+  const handleCardClick = () => {
+    if (project.technicalOverview && onOpenSpecs) {
+      onOpenSpecs(project)
+    } else {
+      setInspecting((prev) => !prev)
+    }
+  }
+
   return (
     <article
-      className={`panel ${styles.card}`}
-      onClick={() => setInspecting((prev) => !prev)}
+      className={`panel ${styles.card} ${project.featured ? styles.featuredCard : ''}`}
+      onClick={handleCardClick}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault()
-          setInspecting((prev) => !prev)
+          handleCardClick()
         }
       }}
-      aria-label={`Project: ${project.title}. Click to toggle archive diagnostics.`}
+      aria-label={`Project: ${project.title}. ${project.technicalOverview ? 'Click to inspect full technical specification.' : 'Click to toggle archive diagnostics.'}`}
     >
       <HudCorners />
       <div className={styles.accent} />
@@ -49,42 +58,75 @@ export function ProjectCard({ project }: Props) {
         ))}
       </ul>
 
+      {/* Featured Technical Spec highlight bar */}
+      {project.technicalOverview && (
+        <div className={styles.specHighlight}>
+          <span className={styles.specKicker}>ACADEMIC & TECHNICAL SPECIFICATION:</span>
+          <p className={styles.specPreview}>
+            Problem Analysis &bull; Architecture Breakdown &bull; Individual Contribution
+          </p>
+        </div>
+      )}
+
       <div className={styles.links} onClick={(e) => e.stopPropagation()}>
-        {project.github ? (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.actionBtn}
+        {project.technicalOverview && onOpenSpecs ? (
+          <button
+            type="button"
+            className={styles.specBtn}
+            onClick={() => onOpenSpecs(project)}
           >
-            <span className={styles.indicator}>[CODE]</span> Repository &rarr;
-          </a>
+            <span className={styles.specBtnIcon}>&bull;</span> Inspect System Specs &rarr;
+          </button>
         ) : null}
-        {project.demo ? (
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.actionBtn}
+
+        <div className={styles.externalLinks}>
+          {project.demo ? (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.actionBtn}
+              aria-label={`Open live demo for ${project.title}`}
+            >
+              <span className={styles.indicator}>[LIVE]</span> Demo
+            </a>
+          ) : null}
+          {project.github ? (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.actionBtn}
+              aria-label={`GitHub repository for ${project.title}`}
+            >
+              <span className={styles.indicator}>[CODE]</span> GitHub
+            </a>
+          ) : (
+            project.technicalOverview && (
+              <span className={styles.pendingRepoTag} title="Repository address pending owner verification">
+                Repo Pending
+              </span>
+            )
+          )}
+        </div>
+
+        {!project.technicalOverview && (
+          <button
+            type="button"
+            className={styles.diagTrigger}
+            onClick={(e) => {
+              e.stopPropagation()
+              setInspecting((prev) => !prev)
+            }}
           >
-            <span className={styles.indicator}>[LIVE]</span> Demo &rarr;
-          </a>
-        ) : null}
-        <button
-          type="button"
-          className={styles.diagTrigger}
-          onClick={(e) => {
-            e.stopPropagation()
-            setInspecting((prev) => !prev)
-          }}
-        >
-          {inspecting ? '[HIDE DIAGNOSTIC]' : '[SYSTEM UPDATE STATUS]'}
-        </button>
+            {inspecting ? '[HIDE DIAGNOSTIC]' : '[SYSTEM UPDATE STATUS]'}
+          </button>
+        )}
       </div>
 
-      {/* Blurred-out Tactical WIP / System Update overlay */}
+      {/* Blurred-out Tactical WIP / System Update overlay for initiatives without full specs */}
       <AnimatePresence>
-        {inspecting && (
+        {inspecting && !project.technicalOverview && (
           <motion.div
             className={styles.archiveOverlay}
             initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
